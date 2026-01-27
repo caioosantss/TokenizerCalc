@@ -1,7 +1,5 @@
-from verificar_operacao import inv
-
-def calculadora(a,b,op):
-    if 'soma' in op :
+def calculadora(a,b,op,inv):
+    if 'adição' in op :
         resultado = a + b
         return resultado
     

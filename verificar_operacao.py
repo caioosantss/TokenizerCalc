@@ -3,9 +3,10 @@ import re
 def verificar_op(texto):
 
     tipo_op = {
-        '+':'soma','mais':'soma','some':'soma','adcione':'soma','adciona':'soma', 'soma':'soma',
+        '+':'adição','mais':'adição','some':'adição','adcione':'adição','adciona':'adição', 'soma':'adição',
         '-':'subtração','subtraia':'subtração','tire':'subtração','tira':'subtração','menos':'subtração',
-        '*':'multiplicação','vezes':'multiplicação'
+        '*':'multiplicação','vezes':'multiplicação','X':'multiplicação',
+        '/':'divisão','divid':'divisão'
         } 
 
     texto = texto.split()
@@ -14,11 +15,15 @@ def verificar_op(texto):
 
     for i in texto:
         if i in tipo_op:
-            operações.append(i)
+            operações.append(tipo_op[i])
 
     return operações
 
+
+
 def inv (texto):
+
+    texto = texto.split()
 
     preposiçao = {'de':'preposição','do':'preposição'}
 
@@ -28,4 +33,4 @@ def inv (texto):
         if i in preposiçao:
             inverter = True
 
-        return inverter
+    return inverter
