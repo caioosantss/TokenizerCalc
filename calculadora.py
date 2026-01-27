@@ -1,22 +1,30 @@
+from verificar_operacao import inv
+
 def calculadora(a,b,op):
-    if 'som' in op :
+    if 'soma' in op :
         resultado = a + b
         return resultado
-    elif 'menos' in op:
+    
+    if inv==False and 'subtração' in op:
         resultado = a - b
         return resultado
-    elif 'subt' in op:
+    
+    elif inv==True and 'subtração' in op:
         resultado = b - a
-        return resultado
-    elif 'vezes' in op:
+        return resultado   
+    
+    elif 'multiplicação' in op:
         resultado = a*b
         return resultado
-    elif 'multipl' in op:
-        resultado = b*a
-        return resultado
-    elif 'divid' in op:
+     
+    elif inv==False and 'divisão' in op:
         resultado = a/b
         return resultado
+    
+    elif inv==True and 'divisão' in op:
+        resultado = b/a
+        return resultado
+    
     else:
         print('conta inconclusiva')
     
