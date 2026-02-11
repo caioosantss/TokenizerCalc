@@ -3,31 +3,37 @@ import verificar_operacao as vo
 import calculadora as cal 
 from verificar_operacao import inv
 
-texto = input('insira a conta que deseja fazer ')
+texto = input('insira a conta que deseja fazer: ').lower()
 
 valores = re.findall(r'\d+',texto)
 
-total = []
+
 
 conta = []
 
 inverter = inv(texto)
 
+
 operacao = vo.verificar_op(texto)
 
-for i in range(0,len(valores)):
-    conta.append(valores[i])
-    if len(conta) == 2:
-        calculo = cal.calculadora(int(conta[0]),int(conta[1]),operacao[i],inverter)
-        total.append(int(calculo))
-        conta = []
-    elif len(valores) - i == 1:
-        resultado = sum(total)
-        op_atual = i - 1
-        calculo = cal.calculadora(int(resultado),int(valores[0],operacao[op_atual]),inverter)
-        print(op_atual)
-print(calculo)
+i = 0
+
+resultado = None
 
 
+#a partir daqui serão montadas as contas
+
+for op in range(0,len(operacao)):
+    for i in range(i,len(valores)):
+        conta.append(valores[i])
+        if resultado is None and len(conta) == 2:
+            resultado = cal.calculadora(int(conta[0]),int(conta[1]),operacao[op],inverter)
+            conta = []
+            break
+#caso o numero de operações nao aborde todos os valores, o seguinte loop se inicia
+        elif len(conta) == 2:
+            resultado = cal.calculadora(int(resultado),int(valores[i]),operacao[op],inverter)
+
+print(resultado)
 
 

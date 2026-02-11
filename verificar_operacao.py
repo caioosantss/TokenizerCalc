@@ -5,8 +5,8 @@ def verificar_op(texto):
     tipo_op = {
         '+':'adição','mais':'adição','some':'adição','adcione':'adição','adciona':'adição', 'soma':'adição',
         '-':'subtração','subtraia':'subtração','tire':'subtração','tira':'subtração','menos':'subtração',
-        '*':'multiplicação','vezes':'multiplicação','X':'multiplicação',
-        '/':'divisão','divid':'divisão'
+        '*':'multiplicação','vezes':'multiplicação','X':'multiplicação','multiplique':'multiplicação',
+        '/':'divisão','divida':'divisão', 
         } 
 
     texto = texto.split()
