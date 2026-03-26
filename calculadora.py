@@ -1,4 +1,5 @@
 def calculadora(a,b,op):
+    
     if 'adição' in op :
         resultado = a + b
         return resultado
@@ -14,6 +15,7 @@ def calculadora(a,b,op):
     elif 'divisão' in op:
         resultado = a/b
         return resultado
+
     
     else:
         print('conta inconclusiva')
